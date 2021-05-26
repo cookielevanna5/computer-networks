@@ -1,7 +1,7 @@
-all: clean
-	@python3 -w ignore simulator.py simulator > /dev/null
+# sophisticated MakeFile ~.~
 
-clean:
-	rm -f simulator > /dev/null
+nothing:
 
-.PHONY: all clean
+all: twist again
+
+.SILENT:
