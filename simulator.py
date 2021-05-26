@@ -1,9 +1,9 @@
 import sys
 from typing import List
 from random import random, expovariate
-# import numpy as np
 
 class Simulator:
+
 
     def __init__(self, RT: int, AR: float, RR: float, probs: List[float]) -> None:
         super().__init__()
@@ -21,6 +21,7 @@ class Simulator:
         self.dumps = 0
         self.success = 0
         self.Ti = [0 for _ in range(len(self.probabilities))]
+
 
     def run(self):
         while True:
@@ -42,6 +43,7 @@ class Simulator:
                 continue
             self.handleDeparts()
 
+
     def handleArrivals(self):
         if random() >= self.probabilities[self.amountInSystem]:
             self.dumps += 1
@@ -55,6 +57,7 @@ class Simulator:
             self.departs = self.time + next_wind
         self.arrival = self.time + expovariate(self.arrivalRate)
 
+
     def handleDeparts(self):
         self.amountInSystem -= 1
         self.success += 1
@@ -64,6 +67,7 @@ class Simulator:
             self.departs = self.time + nextPacket
         else:
             self.departs = float('inf')
+
 
     def printAll(self):
         backspace, toPrint = ' ', ''
