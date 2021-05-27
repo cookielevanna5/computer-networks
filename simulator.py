@@ -35,7 +35,7 @@ class Simulator:
                     return
             occurrenceTime = minArrival if minArrival < minExit else minExit
             diff = (occurrenceTime - self.time)
-            self.totalWait += diff * self.amountInSystem
+            self.totalWait += (diff * self.amountInSystem)
             self.Ti[self.amountInSystem] += diff
             self.time = occurrenceTime
             if minExit >= minArrival:
@@ -47,14 +47,13 @@ class Simulator:
     def handleArrivals(self):
         if random() >= self.probabilities[self.amountInSystem]:
             self.dumps += 1
-            self.arrival = self.time + expovariate(self.arrivalRate)
-            return
-        self.amountInSystem += 1
-        self.amountOfArrivals += 1
-        if 1 >= self.amountInSystem:
-            next_wind = expovariate(self.readRate)
-            self.totalService += next_wind
-            self.departs = self.time + next_wind
+        else:
+            self.amountInSystem += 1
+            self.amountOfArrivals += 1
+            if 1 >= self.amountInSystem:
+                next_wind = expovariate(self.readRate)
+                self.totalService += next_wind
+                self.departs = self.time + next_wind
         self.arrival = self.time + expovariate(self.arrivalRate)
 
 
