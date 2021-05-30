@@ -2,6 +2,4 @@
 
 nothing:
 
-all: twist again
-
 .SILENT:
