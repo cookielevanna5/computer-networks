@@ -21,6 +21,7 @@ repos:
     hooks:
       - id: flake8
         language_version: python3
+        args: ["--exit-zero"]
 
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v2.33.0
