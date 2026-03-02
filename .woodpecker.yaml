@@ -1,0 +1,10 @@
+when:
+  branch: main
+  event: push
+
+steps:
+  - name: "peckify"
+    image: woodpeckercommunity/peckify:latest
+    pull: true
+    settings:
+      check: true
