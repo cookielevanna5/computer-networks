@@ -3,8 +3,10 @@ when:
   event: push
 
 steps:
-  - name: "peckify"
+  peckify:
     image: woodpeckercommunity/peckify:latest
     pull: true
     settings:
       check: true
+      log_level: debug
+      path: .
