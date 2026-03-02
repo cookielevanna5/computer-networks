@@ -51,8 +51,14 @@ repos:
         types: [python]
         args: ["--exit-zero"]
 
-      - id: commitizen
-        name: commitizen (enforce Conventional Commits)
-        entry: cz check --commit-msg-file
-        language: python
+      # - id: commitizen
+      #   name: commitizen (enforce Conventional Commits)
+      #   entry: cz check --commit-msg-file
+      #   language: python
+      #   stages: [commit-msg]
+
+      - id: gitlint
+        name: gitlint (Conventional Commits)
+        entry: gitlint --msg-filename
+        language: system
         stages: [commit-msg]

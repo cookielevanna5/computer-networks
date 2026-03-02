@@ -1,0 +1,10 @@
+[general]
+ignore=body-is-missing
+
+[title-match-regex]
+regex=^(feat|fix|docs|style|refactor|test|chore|ci|build|perf)(\(.+\))?: .+
+
+# renovate tends to generate lines that exceed the default 80 char limit.
+[ignore-by-author-name]
+regex=renovate
+ignore=all
