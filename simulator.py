@@ -1,10 +1,9 @@
 import sys
+from random import expovariate, random
 from typing import List
-from random import random, expovariate
+
 
 class Simulator:
-
-
     def __init__(self, RT: int, AR: float, RR: float, probs: List[float]) -> None:
         super().__init__()
         self.runTime = RT
@@ -15,13 +14,12 @@ class Simulator:
         self.time = 0.0
         self.amountOfArrivals = 0
         self.arrival = expovariate(AR)
-        self.departs = float('inf')
+        self.departs = float("inf")
         self.totalWait = 0.0
         self.totalService = 0.0
         self.dumps = 0
         self.success = 0
         self.Ti = [0 for _ in range(len(self.probabilities))]
-
 
     def run(self):
         while True:
@@ -29,20 +27,19 @@ class Simulator:
             minArrival = self.arrival
             if self.runTime < minArrival:
                 if self.amountInSystem != 0:
-                    minArrival = float('inf')
+                    minArrival = float("inf")
                 else:
                     self.printAll()
                     return
             occurrenceTime = minArrival if minArrival < minExit else minExit
-            diff = (occurrenceTime - self.time)
-            self.totalWait += (diff * self.amountInSystem)
+            diff = occurrenceTime - self.time
+            self.totalWait += diff * self.amountInSystem
             self.Ti[self.amountInSystem] += diff
             self.time = occurrenceTime
             if minExit >= minArrival:
                 self.handleArrivals()
                 continue
             self.handleDeparts()
-
 
     def handleArrivals(self):
         if random() >= self.probabilities[self.amountInSystem]:
@@ -56,7 +53,6 @@ class Simulator:
                 self.departs = self.time + next_wind
         self.arrival = self.time + expovariate(self.arrivalRate)
 
-
     def handleDeparts(self):
         self.amountInSystem -= 1
         self.success += 1
@@ -65,14 +61,13 @@ class Simulator:
             self.totalService += nextPacket
             self.departs = self.time + nextPacket
         else:
-            self.departs = float('inf')
-
+            self.departs = float("inf")
 
     def printAll(self):
-        backspace, toPrint = ' ', ''
+        backspace, toPrint = " ", ""
         avgServ, avgWait = 0.0, 0.0
         if 0 != self.success:
-            avgWait = (self.totalWait - self.totalService)
+            avgWait = self.totalWait - self.totalService
             avgWait /= self.success
             avgServ = self.totalService / self.success
         toPrint += str(self.success) + backspace

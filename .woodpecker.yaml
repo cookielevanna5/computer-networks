@@ -8,5 +8,3 @@ steps:
     pull: true
     settings:
       check: true
-      log_level: debug
-      path: .
