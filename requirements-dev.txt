@@ -3,3 +3,4 @@ black==26.1.0
 isort==8.0.1
 flake8==7.3.0
 gitlint==0.19.1
+commitizen==4.13.9
