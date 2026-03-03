@@ -35,19 +35,19 @@ repos:
       - id: black
         name: Black (auto-format Python)
         entry: black .
-        language: python
+        language: system
         types: [python]
 
       - id: isort
         name: isort (sort imports)
         entry: isort .
-        language: python
+        language: system
         types: [python]
 
       - id: flake8
         name: flake8 (lint)
         entry: flake8
-        language: python
+        language: system
         types: [python]
         args: ["--exit-zero"]
 
