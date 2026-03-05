@@ -1,64 +1,69 @@
-# # .pre-commit-config.yaml
-# repos:
-#   # Black code formatter
-#   - repo: https://github.com/psf/black
-#     rev: 23.9.1
-#     hooks:
-#       - id: black
-#         language_version: python3
-
-#   # isort for import sorting
-#   - repo: https://github.com/pycqa/isort
-#     rev: 6.1.0
-#     hooks:
-#       - id: isort
-#         name: isort (python imports)
-#         language_version: python3
-
-#   # flake8 for static analysis
-#   - repo: https://github.com/pycqa/flake8
-#     rev: 7.0.0
-#     hooks:
-#       - id: flake8
-#         language_version: python3
-#         args: ["--exit-zero"]
-
-#   - repo: https://github.com/commitizen-tools/commitizen
-#     rev: v2.33.0
-#     hooks:
-#       - id: commitizen
-#         stages: [commit-msg]
+# .pre-commit-config.yaml
+default_language_version:
+  # force all unspecified python hooks to run python3
+  python: python3
 
 repos:
-  - repo: local
+  # isort for import sorting
+  - repo: https://github.com/pycqa/isort
+    rev: 8.0.1
+    hooks:
+      - id: isort
+        name: isort (python imports)
+        args: ["--profile", "black", "--filter-files"]
+        stages: [pre-commit]
+
+  # Black code formatter
+  - repo: https://github.com/psf/black
+    rev: 26.1.0
     hooks:
       - id: black
-        name: Black (auto-format Python)
-        entry: black .
-        language: system
-        types: [python]
+        stages: [pre-commit]
 
-      - id: isort
-        name: isort (sort imports)
-        entry: isort .
-        language: system
-        types: [python]
-
+  # flake8 for static analysis
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
       - id: flake8
-        name: flake8 (lint)
-        entry: flake8
-        language: system
-        types: [python]
         args: ["--exit-zero"]
+        stages: [pre-commit]
 
-      # - id: commitizen
-      #   name: commitizen (enforce Conventional Commits)
-      #   entry: cz check --commit-msg-file
-      #   language: python
-      #   stages: [commit-msg]
-
-      - id: gitlint
-        name: gitlint (Conventional Commits)
-        entry: gitlint --msg-filename
-        language: system
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.13.9
+    hooks:
+      - id: commitizen
         stages: [commit-msg]
+
+# repos:
+#   - repo: local
+#     hooks:
+#       - id: black
+#         name: Black (auto-format Python)
+#         entry: black .
+#         language: system
+#         types: [python]
+
+#       - id: isort
+#         name: isort (sort imports)
+#         entry: isort .
+#         language: system
+#         types: [python]
+
+#       - id: flake8
+#         name: flake8 (lint)
+#         entry: flake8
+#         language: system
+#         types: [python]
+#         args: ["--exit-zero"]
+
+#       # - id: commitizen
+#       #   name: commitizen (enforce Conventional Commits)
+#       #   entry: cz check --commit-msg-file
+#       #   language: python
+#       #   stages: [commit-msg]
+
+#       - id: gitlint
+#         name: gitlint (Conventional Commits)
+#         entry: gitlint --msg-filename
+#         language: system
+#         stages: [commit-msg]
