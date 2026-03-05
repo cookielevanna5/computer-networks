@@ -13,19 +13,19 @@ repos:
         args: ["--profile", "black", "--filter-files"]
         stages: [pre-commit]
 
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.3.3
+    hooks:
+      - id: autoflake
+        args:
+          [--remove-all-unused-imports, --remove-unused-variables, --in-place]
+        stages: [pre-commit]
+
   # Black code formatter
   - repo: https://github.com/psf/black
     rev: 26.1.0
     hooks:
       - id: black
-        stages: [pre-commit]
-
-  # flake8 for static analysis
-  - repo: https://github.com/pycqa/flake8
-    rev: 7.0.0
-    hooks:
-      - id: flake8
-        args: ["--exit-zero"]
         stages: [pre-commit]
 
   - repo: https://github.com/commitizen-tools/commitizen
