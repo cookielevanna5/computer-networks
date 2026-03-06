@@ -3,8 +3,7 @@ when:
   event: push
 
 steps:
-  peckify:
-    image: woodpeckercommunity/peckify:latest
-    pull: true
+  run-pre-commit-hooks:
+    image: codeberg.org/sp1thas/woodpecker-ci-pre-commit-runner
     settings:
-      check: true
+      args: "--all-files"
