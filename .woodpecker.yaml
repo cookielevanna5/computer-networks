@@ -7,7 +7,8 @@ steps:
     image: woodpeckerci/plugin-prettier:next
     settings:
       check: false
-  # run-pre-commit-hooks:
-  #   image: codeberg.org/sp1thas/woodpecker-ci-pre-commit-runner
-  #   settings:
-  #     args: "--all-files"
+
+  run-pre-commit-hooks:
+    image: codeberg.org/sp1thas/woodpecker-ci-pre-commit-runner
+    settings:
+      args: "--all-files"
