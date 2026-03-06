@@ -3,7 +3,10 @@ when:
   event: push
 
 steps:
-  run-pre-commit-hooks:
-    image: codeberg.org/sp1thas/woodpecker-ci-pre-commit-runner
-    settings:
-      args: "--all-files"
+  prettier:
+    image: woodpeckerci/plugin-prettier:next
+
+  # run-pre-commit-hooks:
+  #   image: codeberg.org/sp1thas/woodpecker-ci-pre-commit-runner
+  #   settings:
+  #     args: "--all-files"
