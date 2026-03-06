@@ -1,5 +1,6 @@
 [general]
 ignore=body-is-missing
+regex-style-search=True
 
 [title-match-regex]
 regex=^(feat|fix|docs|style|refactor|test|chore|ci|build|perf)(\(.+\))?: .+

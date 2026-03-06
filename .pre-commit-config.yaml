@@ -4,66 +4,79 @@ default_language_version:
   python: python3
 
 repos:
-  # isort for import sorting
-  - repo: https://github.com/pycqa/isort
-    rev: 8.0.1
+  #   # isort for import sorting
+  #   - repo: https://github.com/pycqa/isort
+  #     rev: 8.0.1
+  #     hooks:
+  #       - id: isort
+  #         name: isort (python imports)
+  #         args: ["--profile", "black", "--filter-files"]
+  #         stages: [pre-commit]
+
+  #   - repo: https://github.com/PyCQA/autoflake
+  #     rev: v2.3.3
+  #     hooks:
+  #       - id: autoflake
+  #         args:
+  #           [--remove-all-unused-imports, --remove-unused-variables, --in-place]
+  #         stages: [pre-commit]
+
+  #   # Black code formatter
+  #   - repo: https://github.com/psf/black
+  #     rev: 26.1.0
+  #     hooks:
+  #       - id: black
+  #         stages: [pre-commit]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
     hooks:
-      - id: isort
-        name: isort (python imports)
-        args: ["--profile", "black", "--filter-files"]
+      - id: trailing-whitespace
+        stages: [pre-commit]
+      - id: end-of-file-fixer
+        stages: [pre-commit]
+      - id: check-json
+        stages: [pre-commit]
+      - id: check-yaml
+        stages: [pre-commit]
+      - id: check-merge-conflict
+        stages: [pre-commit]
+      - id: debug-statements
+        stages: [pre-commit]
+      - id: check-added-large-files
         stages: [pre-commit]
 
-  - repo: https://github.com/PyCQA/autoflake
-    rev: v2.3.3
-    hooks:
-      - id: autoflake
-        args:
-          [--remove-all-unused-imports, --remove-unused-variables, --in-place]
-        stages: [pre-commit]
-
-  # Black code formatter
   - repo: https://github.com/psf/black
     rev: 26.1.0
     hooks:
       - id: black
         stages: [pre-commit]
 
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.4
+    hooks:
+      # Run the linter.
+      - id: ruff-check
+        args: [--fix]
+        stages: [pre-commit]
+      # Run the formatter.
+      - id: ruff-format
+        stages: [pre-commit]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.19.1
+    hooks:
+      - id: mypy
+        stages: [pre-commit]
+
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks:
+      - id: gitlint
+        stages: [commit-msg]
+
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v4.13.9
     hooks:
       - id: commitizen
         stages: [commit-msg]
-
-# repos:
-#   - repo: local
-#     hooks:
-#       - id: black
-#         name: Black (auto-format Python)
-#         entry: black .
-#         language: system
-#         types: [python]
-
-#       - id: isort
-#         name: isort (sort imports)
-#         entry: isort .
-#         language: system
-#         types: [python]
-
-#       - id: flake8
-#         name: flake8 (lint)
-#         entry: flake8
-#         language: system
-#         types: [python]
-#         args: ["--exit-zero"]
-
-#       # - id: commitizen
-#       #   name: commitizen (enforce Conventional Commits)
-#       #   entry: cz check --commit-msg-file
-#       #   language: python
-#       #   stages: [commit-msg]
-
-#       - id: gitlint
-#         name: gitlint (Conventional Commits)
-#         entry: gitlint --msg-filename
-#         language: system
-#         stages: [commit-msg]

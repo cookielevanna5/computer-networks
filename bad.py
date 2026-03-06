@@ -1,8 +1,3 @@
-import os
-import sys
-from datetime import datetime
-
-
 def calculate(x, y):
     if x > y:
         print("x is bigger")
