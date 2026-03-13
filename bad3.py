@@ -3,11 +3,11 @@ def add(a, b):
 
 
 def long_function_name(var_one, var_two, var_three, var_four):
-    if var_one == True:
+    if var_one:
         print("Something happened")
     else:
         print("Something else happened")
-        if var_two == True:
+        if var_two:
             print("nested condition")
 
 
