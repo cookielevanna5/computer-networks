@@ -23,7 +23,7 @@ repos:
         stages: [pre-commit]
 
   - repo: https://github.com/psf/black
-    rev: 25.11.0
+    rev: 26.3.0
     hooks:
       - id: black
         stages: [pre-commit]
@@ -52,7 +52,7 @@ repos:
         stages: [commit-msg]
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.10.1
+    rev: v4.13.9
     hooks:
       - id: commitizen
         stages: [commit-msg]
