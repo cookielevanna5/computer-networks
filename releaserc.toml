@@ -15,7 +15,7 @@ version_toml = [
 match = "(main|master)"
 prerelease = false
 
-[semantic_release.branches.main]
+[semantic_release.branches.dev]
 match = "dev"
 prerelease_token = "rc"
 prerelease = true
