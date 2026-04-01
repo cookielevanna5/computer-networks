@@ -2,6 +2,15 @@
 
 <!-- version list -->
 
+## v0.0.2 (2026-04-01)
+
+### Bug Fixes
+
+- **api**: Added support to some blah blah
+  ([#8](https://github.com/cookielevanna5/computer-networks/pull/8),
+  [`76088f9`](https://github.com/cookielevanna5/computer-networks/commit/76088f9e3237250931d8510a74dd029b968cbdd3))
+
+
 ## v0.0.1-rc.3 (2026-04-01)
 
 ### Bug Fixes
