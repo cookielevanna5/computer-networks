@@ -1,0 +1,7 @@
+[project]
+name = "my-package"
+version = "0.0.0"
+description = "A simple example package"
+authors = [
+  { name="Your Name", email="you@example.com" }
+]

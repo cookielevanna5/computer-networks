@@ -1,0 +1,20 @@
+when:
+  event: push
+  branch:
+    - dev
+    - main
+
+skip_clone: true
+
+steps:
+  semantic-release:
+    image: python:3.14.3-slim
+    environment:
+      GH_TOKEN:
+        from_secret: cookie-github-token
+    commands:
+      - apt-get update && apt-get install -y git
+      - git clone "$CI_REPO_CLONE_URL" && cd "$CI_REPO_NAME" && git checkout "$CI_COMMIT_BRANCH"
+      - pip install python-semantic-release
+      - apt-get update && apt-get install -y git
+      - semantic-release -v --config releaserc.toml version --skip-build --no-vcs-release

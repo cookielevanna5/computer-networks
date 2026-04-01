@@ -1,0 +1,58 @@
+when:
+  event: pull_request
+  branch:
+    - dev
+    - main
+
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      depth: 0
+      tags: true
+
+steps:
+  commitizen:
+    image: python:3.14.3-slim
+    commands:
+      - pip install commitizen
+      - cz check --message "$CI_COMMIT_MESSAGE"
+
+  semantic-release:
+    image: python:3.14.3-slim
+    commands:
+      - pip install python-semantic-release
+      - apt-get update && apt-get install -y git
+
+      # Ensure full git history (important for semantic-release)
+      - git fetch --all --tags --prune
+
+      # Define branches
+      - export SRC="$CI_COMMIT_SOURCE_BRANCH"
+      - export TGT="$CI_COMMIT_TARGET_BRANCH"
+
+      # Checkout target branch
+      - git checkout -B "$TGT" "origin/$TGT"
+      - git fetch origin "$SRC:$SRC"
+
+      # --- Check squash merge ---
+      - |
+        echo "Checking squash merge from $SRC into $TGT"
+
+        if git merge --squash --no-commit "$SRC"; then
+          echo "✅ No conflicts"
+
+          # Show commits that would be merged
+          echo "Commits to be merged:"
+          git log --oneline "$TGT..$SRC"
+
+          # Reset after test merge
+          git reset --hard HEAD
+
+          echo "Running semantic-release dry run..."
+          semantic-release -v --noop --config releaserc.toml version --print
+        else
+          echo "❌ Merge conflicts detected"
+          git merge --abort || true
+          exit 1
+        fi
