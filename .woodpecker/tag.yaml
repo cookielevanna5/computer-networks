@@ -1,0 +1,8 @@
+when:
+  event: tag
+
+steps:
+  env:
+    image: busybox
+    commands:
+      - env | sort

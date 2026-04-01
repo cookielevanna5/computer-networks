@@ -1,0 +1,12 @@
+when:
+  event: push
+  branch:
+    - dev
+    - main
+
+steps:
+  semantic-release:
+    image: python:3.14.3-slim
+    commands:
+      - pip install python-semantic-release
+      - semantic-release -v --config releaserc.toml version --skip-build --no-vcs-release
