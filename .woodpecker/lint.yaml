@@ -1,0 +1,12 @@
+when:
+  event: pull_request
+  branch:
+    - dev
+    - main
+
+steps:
+  commitizen:
+    image: python:3.14.3-slim
+    commands:
+      - pip install commitizen
+      - cz check --message $CI_COMMIT_MESSAGE
