@@ -9,4 +9,11 @@ steps:
     image: python:3.14.3-slim
     commands:
       - pip install commitizen
+      - env | sort
       - cz check --message $CI_COMMIT_MESSAGE
+
+  semantic-release:
+    image: python:3.14.3-slim
+    commands:
+      - pip install python-semantic-release
+      - semantic-release -v --noop --config releaserc.toml version --print
