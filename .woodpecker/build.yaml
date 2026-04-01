@@ -9,6 +9,9 @@ skip_clone: true
 steps:
   semantic-release:
     image: python:3.14.3-slim
+    environment:
+      GH_TOKEN:
+        from_secret: cookie-github-token
     commands:
       - apt-get update && apt-get install -y git
       - git clone "$CI_REPO_CLONE_URL" && cd "$CI_REPO_NAME" && git checkout "$CI_COMMIT_BRANCH"
