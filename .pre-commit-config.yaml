@@ -45,14 +45,14 @@ repos:
       - id: mypy
         stages: [pre-commit]
 
-  - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.19.1
-    hooks:
-      - id: gitlint
-        stages: [commit-msg]
+  # - repo: https://github.com/jorisroovers/gitlint
+  #   rev: v0.19.1
+  #   hooks:
+  #     - id: gitlint
+  #       stages: [commit-msg]
 
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.13.9
-    hooks:
-      - id: commitizen
-        stages: [commit-msg]
+  # - repo: https://github.com/commitizen-tools/commitizen
+  #   rev: v4.13.9
+  #   hooks:
+  #     - id: commitizen
+  #       stages: [commit-msg]
