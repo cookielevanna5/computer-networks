@@ -16,7 +16,6 @@ steps:
     image: python:3.14.3-slim
     commands:
       - pip install commitizen
-      - env | sort
       - cz check --message "$CI_COMMIT_MESSAGE"
 
   semantic-release:
