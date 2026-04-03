@@ -4,12 +4,7 @@ when:
     - dev
     - main
 
-clone:
-  git:
-    image: woodpeckerci/plugin-git
-    settings:
-      depth: 0
-      tags: true
+skip_clone: true
 
 steps:
   commitizen:
@@ -24,15 +19,10 @@ steps:
       - pip install python-semantic-release
       - apt-get update && apt-get install -y git
 
-      # Ensure full git history (important for semantic-release)
-      - git fetch --all --tags --prune
-
       # Define branches
       - export SRC="$CI_COMMIT_SOURCE_BRANCH"
       - export TGT="$CI_COMMIT_TARGET_BRANCH"
-
-      # Checkout target branch
-      - git checkout -B "$TGT" "origin/$TGT"
+      - git clone "$CI_REPO_CLONE_URL" && cd "$CI_REPO_NAME" && git checkout "$CI_COMMIT_BRANCH"
 
       # --- Check squash merge ---
       - |
