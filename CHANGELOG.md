@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v2.0.1 (2026-04-03)
+
+### Bug Fixes
+
+- Try fixie fix ([#25](https://github.com/cookielevanna5/computer-networks/pull/25),
+  [`7c8651e`](https://github.com/cookielevanna5/computer-networks/commit/7c8651e605b00c779cfb0f4184c317d28972ac9c))
+
+
 ## v2.0.0 (2026-04-03)
 
 
