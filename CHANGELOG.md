@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.1.0-rc.2 (2026-04-03)
+
+### Bug Fixes
+
+- Lets see merge strategy ([#12](https://github.com/cookielevanna5/computer-networks/pull/12),
+  [`4e1fa8b`](https://github.com/cookielevanna5/computer-networks/commit/4e1fa8bc7d84df28a4ff476bee03a250cd1056b7))
+
+
 ## v0.1.0-rc.1 (2026-04-03)
 
 ### Bug Fixes
