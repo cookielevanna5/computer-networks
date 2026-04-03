@@ -19,6 +19,8 @@ steps:
       - TAG=$(semantic-release -v --noop --config releaserc.toml version --print)
       - |
         if [ -n "$TAG" ]; then
+          git config --global credential.helper store
+          printf "https://x-access-token:%s@github.com\n" "$GH_TOKEN" > ~/.git-credentials
           git tag "$TAG" && git push origin "$TAG"
         fi
     when:
