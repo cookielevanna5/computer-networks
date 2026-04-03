@@ -17,7 +17,11 @@ steps:
       - git clone "$CI_REPO_CLONE_URL" && cd "$CI_REPO_NAME" && git checkout "$CI_COMMIT_BRANCH"
       - pip install python-semantic-release
       - apt-get update && apt-get install -y git
-      - semantic-release -v --config releaserc.toml version --skip-build --no-vcs-release --no-changelog
+      - TAG=$(semantic-release -v --noop --config releaserc.toml version --print)
+      - |
+        if [ -n "$TAG" ]; then
+          git tag "$TAG" && git push origin "$TAG"
+        fi
     when:
       branch: dev
 
