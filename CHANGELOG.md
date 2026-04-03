@@ -2,6 +2,19 @@
 
 <!-- version list -->
 
+## v0.1.0-rc.1 (2026-04-03)
+
+### Bug Fixes
+
+- **api**: Trying to see what happens
+  ([#9](https://github.com/cookielevanna5/computer-networks/pull/9),
+  [`0807823`](https://github.com/cookielevanna5/computer-networks/commit/0807823d31cf5b363f1556d918d27cbf1a60a6d5))
+
+### Breaking Changes
+
+- **api**: Lets see huh
+
+
 ## v0.0.3 (2026-04-03)
 
 
