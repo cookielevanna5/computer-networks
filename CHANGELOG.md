@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v0.0.4 (2026-04-03)
+
+### Bug Fixes
+
+- **wow**: Trytry ([#11](https://github.com/cookielevanna5/computer-networks/pull/11),
+  [`0589327`](https://github.com/cookielevanna5/computer-networks/commit/05893277ec2f2067ca1a017a146da2b76f20721f))
+
+
 ## v0.1.0-rc.1 (2026-04-03)
 
 ### Bug Fixes
