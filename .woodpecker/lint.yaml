@@ -43,7 +43,7 @@ steps:
 
           # Show commits that would be merged
           echo "Commits to be merged:"
-          git log --oneline "$TGT..$SRC"
+          git log --oneline "origin/$TGT..origin/$SRC"
 
           echo "Running semantic-release dry run..."
           git commit -m "$CI_COMMIT_MESSAGE" --allow-empty
