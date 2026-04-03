@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v2.1.0 (2026-04-03)
+
+### Features
+
+- Finale supposedly lmao ([#28](https://github.com/cookielevanna5/computer-networks/pull/28),
+  [`8084339`](https://github.com/cookielevanna5/computer-networks/commit/8084339f26864f0776c7f365e1aff536e3fe19ff))
+
+
 ## v2.0.1 (2026-04-03)
 
 ### Bug Fixes
