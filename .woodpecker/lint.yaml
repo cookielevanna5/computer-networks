@@ -33,23 +33,20 @@ steps:
 
       # Checkout target branch
       - git checkout -B "$TGT" "origin/$TGT"
-      - git fetch origin "$SRC:$SRC"
 
       # --- Check squash merge ---
       - |
         echo "Checking squash merge from $SRC into $TGT"
 
-        if git merge --squash --no-commit "$SRC"; then
+        if git merge --squash "origin/$SRC"; then
           echo "✅ No conflicts"
 
           # Show commits that would be merged
           echo "Commits to be merged:"
-          git log --oneline "$TGT..$SRC"
-
-          # Reset after test merge
-          git reset --hard HEAD
+          git log --oneline "origin/$TGT..origin/$SRC"
 
           echo "Running semantic-release dry run..."
+          git commit -m "$CI_COMMIT_MESSAGE" --allow-empty
           semantic-release -v --noop --config releaserc.toml version --print
         else
           echo "❌ Merge conflicts detected"
