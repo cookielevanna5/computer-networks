@@ -2,7 +2,6 @@ when:
   event: pull_request
   branch:
     - dev
-    - main
 
 skip_clone: true
 
