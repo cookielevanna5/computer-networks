@@ -28,12 +28,12 @@ steps:
       - |
         echo "Checking squash merge from $SRC into $TGT"
 
-        if git merge --squash "$SRC"; then
+        if git merge --squash "origin/$SRC"; then
           echo "✅ No conflicts"
 
           # Show commits that would be merged
           echo "Commits to be merged:"
-          git log --oneline "$TGT..$SRC"
+          git log --oneline "origin/$TGT..origin/$SRC"
 
           echo "Running semantic-release dry run..."
           git commit -m "$CI_COMMIT_MESSAGE" --allow-empty
