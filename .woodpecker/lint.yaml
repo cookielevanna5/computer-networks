@@ -32,13 +32,13 @@ steps:
       - export TGT="$CI_COMMIT_TARGET_BRANCH"
 
       # Checkout target branch
-      - git checkout $TGT
+      - git checkout -B "$TGT" "origin/$TGT"
 
       # --- Check squash merge ---
       - |
         echo "Checking squash merge from $SRC into $TGT"
 
-        if git merge --squash "$SRC"; then
+        if git merge --squash "origin/$SRC"; then
           echo "✅ No conflicts"
 
           # Show commits that would be merged
