@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v2.2.0-rc.2 (2026-04-04)
+
+### Bug Fixes
+
+- Huh what the heck why not ([#32](https://github.com/cookielevanna5/computer-networks/pull/32),
+  [`44893d2`](https://github.com/cookielevanna5/computer-networks/commit/44893d2a216bbc5b208063c0add0891ee08e9c3a))
+
+
 ## v2.2.0-rc.1 (2026-04-04)
 
 ### Features
