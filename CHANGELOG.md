@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v2.2.0-rc.1 (2026-04-04)
+
+### Features
+
+- Trying something interesting ([#30](https://github.com/cookielevanna5/computer-networks/pull/30),
+  [`0212f35`](https://github.com/cookielevanna5/computer-networks/commit/0212f358a224b2d0d7850c8930f9059cc9256fcb))
+
+
 ## v2.1.0 (2026-04-03)
 
 ### Features
