@@ -2,13 +2,28 @@
 
 <!-- version list -->
 
+## v2.2.0-rc.2 (2026-04-04)
+
+### Bug Fixes
+
+- Huh what the heck why not ([#32](https://github.com/cookielevanna5/computer-networks/pull/32),
+  [`44893d2`](https://github.com/cookielevanna5/computer-networks/commit/44893d2a216bbc5b208063c0add0891ee08e9c3a))
+
+
+## v2.2.0-rc.1 (2026-04-04)
+
+### Features
+
+- Trying something interesting ([#30](https://github.com/cookielevanna5/computer-networks/pull/30),
+  [`0212f35`](https://github.com/cookielevanna5/computer-networks/commit/0212f358a224b2d0d7850c8930f9059cc9256fcb))
+
+
 ## v2.1.0 (2026-04-03)
 
 ### Features
 
 - Finale supposedly lmao ([#28](https://github.com/cookielevanna5/computer-networks/pull/28),
   [`8084339`](https://github.com/cookielevanna5/computer-networks/commit/8084339f26864f0776c7f365e1aff536e3fe19ff))
-
 
 ## v2.0.1 (2026-04-03)
 
@@ -17,18 +32,13 @@
 - Try fixie fix ([#25](https://github.com/cookielevanna5/computer-networks/pull/25),
   [`7c8651e`](https://github.com/cookielevanna5/computer-networks/commit/7c8651e605b00c779cfb0f4184c317d28972ac9c))
 
-
 ## v2.0.0 (2026-04-03)
-
 
 ## v1.0.0 (2026-04-03)
 
-
 ## v0.1.0 (2026-04-03)
 
-
 ## v0.1.0-rc.3 (2026-04-03)
-
 
 ## v0.1.0-rc.2 (2026-04-03)
 
