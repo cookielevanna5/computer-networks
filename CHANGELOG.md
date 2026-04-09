@@ -2,6 +2,34 @@
 
 <!-- version list -->
 
+## v3.0.0 (2026-04-09)
+
+### Bug Fixes
+
+- Git cmd was missing in semantic release
+  ([`3b40d9f`](https://github.com/cookielevanna5/computer-networks/commit/3b40d9fba2fe6ab603ab84d62b837f39fe21bfed))
+
+- Made an oopsy ([#38](https://github.com/cookielevanna5/computer-networks/pull/38),
+  [`e9390dc`](https://github.com/cookielevanna5/computer-networks/commit/e9390dc78fc488e8f5fc2ad0bb89a23d2d888f8d))
+
+### Continuous Integration
+
+- Reformat all ([#39](https://github.com/cookielevanna5/computer-networks/pull/39),
+  [`80b7d33`](https://github.com/cookielevanna5/computer-networks/commit/80b7d3358a346f2f8b6bf056f88a54f1223bbfb4))
+
+### Features
+
+- Added new cool feature
+  ([`dd033dd`](https://github.com/cookielevanna5/computer-networks/commit/dd033dda6cf1f841887e96159f8c7297ff64660d))
+
+- Trying to have minor bump ([#34](https://github.com/cookielevanna5/computer-networks/pull/34),
+  [`e2df344`](https://github.com/cookielevanna5/computer-networks/commit/e2df3440fa81f4ff2991939b9817e1a88ffd91be))
+
+### Breaking Changes
+
+- OMG api breaks Co-authored-by: cookie <arielk2356@gmail.com>
+
+
 ## v2.3.0 (2026-04-09)
 
 ### Bug Fixes
