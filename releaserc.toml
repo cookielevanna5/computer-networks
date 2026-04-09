@@ -18,7 +18,7 @@ match = "dev"
 prerelease_token = "rc"
 prerelease = true
 
-[tool.semantic_release.changelog]
+[semantic_release.changelog]
 template_dir = "config/release-templates"
 insertion_flag = "=========\nCHANGELOG\n========="
 mode = "update"
