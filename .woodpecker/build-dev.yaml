@@ -1,0 +1,35 @@
+when:
+  event: push
+  branch: dev
+  evaluate: '
+    CI_COMMIT_MESSAGE startsWith "feat" ||
+    CI_COMMIT_MESSAGE startsWith "fix"  ||
+    CI_COMMIT_MESSAGE startsWith "perf" ||
+    CI_COMMIT_MESSAGE contains "!:" ||
+    CI_COMMIT_MESSAGE contains "BREAKING CHANGE"
+    '
+
+steps:
+  env:
+    image: busybox
+    commands:
+      - env
+
+  commitizen:
+    image: python:3.14.3-slim
+    commands:
+      - pip install commitizen
+      - cz check --message "$CI_COMMIT_MESSAGE"
+
+  semantic-release:
+    image: python:3.14.3-slim
+    commands:
+      - pip install python-semantic-release
+      - semantic-release -v --noop --config releaserc.toml version --print-tag | tee .tags
+
+  build:
+    image: woodpeckerci/plugin-docker-buildx:5.2.2
+    settings:
+      dry_run: true
+      repo: demo-repo
+      tags_file: ./.tags
