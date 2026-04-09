@@ -13,7 +13,7 @@ steps:
   env:
     image: busybox
     commands:
-      - env | sort
+      - env
 
   commitizen:
     image: python:3.14.3-slim
