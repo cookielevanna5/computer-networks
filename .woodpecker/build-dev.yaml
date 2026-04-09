@@ -1,8 +1,13 @@
 when:
   event: push
   branch: dev
-  evaluate: >
-    'CI_COMMIT_MESSAGE matches "^([a-zA-Z]+(\\([a-zA-Z0-9_-]+\\))?!:|(feat|fix|perf)(\\([a-zA-Z0-9_-]+\\))?:)|BREAKING CHANGE"'
+  evaluate: '
+    CI_COMMIT_MESSAGE startsWith "feat" ||
+    CI_COMMIT_MESSAGE startsWith "fix"  ||
+    CI_COMMIT_MESSAGE startsWith "perf" ||
+    CI_COMMIT_MESSAGE contains "!:" ||
+    CI_COMMIT_MESSAGE contains "BREAKING CHANGE"
+    '
 
 steps:
   env:
