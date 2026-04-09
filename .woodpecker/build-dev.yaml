@@ -22,7 +22,7 @@ steps:
       - semantic-release -v --noop --config releaserc.toml version --print-tag | tee .tags
 
   build:
-    image: woodpeckerci/plugin-docker-buildx
+    image: woodpeckerci/plugin-docker-buildx:5.2.2
     settings:
       dry_run: true
       repo: demo-repo
