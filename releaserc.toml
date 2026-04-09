@@ -4,7 +4,7 @@ commit_parser = "conventional"
 tag_format = "v{version}"
 
 [semantic_release.branches.main]
-match = "(main|master)"
+match = "^(main|master)$"
 prerelease = false
 
 [semantic_release.branches.dev]

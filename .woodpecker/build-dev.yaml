@@ -26,6 +26,7 @@ steps:
   semantic-release:
     image: python:3.14.3-slim
     commands:
+      - apt-get update && apt-get install -y git
       - pip install python-semantic-release
       - semantic-release -v --noop --config releaserc.toml version --print-tag | tee .tags
 
