@@ -2,7 +2,9 @@ when:
   event: tag
 
 steps:
-  env:
-    image: busybox
-    commands:
-      - env | sort
+  build:
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      dry_run: true
+      repo: demo-repo
+      tag: ${CI_COMMIT_TAG}

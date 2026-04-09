@@ -1,0 +1,24 @@
+when:
+  event: push
+  branch: dev
+  evaluate: >
+    'CI_COMMIT_MESSAGE matches "^([a-zA-Z]+(\\([a-zA-Z0-9_-]+\\))?!:|(feat|fix|perf)(\\([a-zA-Z0-9_-]+\\))?:)|BREAKING CHANGE"'
+
+steps:
+  env:
+    image: busybox
+    commands:
+      - env | sort
+
+  semantic-release:
+    image: python:3.14.3-slim
+    commands:
+      - pip install python-semantic-release
+      - semantic-release -v --noop --config releaserc.toml version --print-tag | tee .tags
+
+  build:
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      dry_run: true
+      repo: demo-repo
+      tags_file: ./.tags
