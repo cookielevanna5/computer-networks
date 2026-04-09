@@ -6,4 +6,5 @@ steps:
     image: woodpeckerci/plugin-docker-buildx:5.2.2
     settings:
       dry_run: true
+      repo: demo
       tag: ${CI_COMMIT_TAG}
