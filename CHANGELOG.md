@@ -2,6 +2,22 @@
 
 <!-- version list -->
 
+## v2.3.0 (2026-04-09)
+
+### Bug Fixes
+
+- Git cmd was missing in semantic release
+  ([`60a8853`](https://github.com/cookielevanna5/computer-networks/commit/60a885380ef22d8d7e8d29bdc7f7ec2a8adc62e4))
+
+### Features
+
+- Added new cool feature
+  ([`3b247ba`](https://github.com/cookielevanna5/computer-networks/commit/3b247ba151a418c64ac25b2b3037e04b4d513a64))
+
+- Trying to have minor bump ([#34](https://github.com/cookielevanna5/computer-networks/pull/34),
+  [`f190c4f`](https://github.com/cookielevanna5/computer-networks/commit/f190c4fddb91cc1feee2c41d16290c84760e9e14))
+
+
 ## v2.2.0 (2026-04-04)
 
 
