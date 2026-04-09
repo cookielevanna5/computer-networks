@@ -9,12 +9,14 @@ when:
     CI_COMMIT_MESSAGE contains "BREAKING CHANGE"
     '
 
-steps:
-  env:
-    image: busybox
-    commands:
-      - env
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      tags: true
+      depth: 0
 
+steps:
   commitizen:
     image: python:3.14.3-slim
     commands:
