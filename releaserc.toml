@@ -6,7 +6,7 @@ version_toml = [
     "pyproject.toml:project.version:tf",
 ]
 version_variables = [
-    ".cz.yaml:version:tf",
+    ".cz.yaml:version:nf",
 ]
 
 [semantic_release.branches.main]
