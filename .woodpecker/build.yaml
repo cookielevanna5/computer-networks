@@ -6,7 +6,7 @@ when:
 skip_clone: true
 
 steps:
-  semantic-release-main:
+  semantic-release:
     image: python:3.14.3-slim
     environment:
       GH_TOKEN:
@@ -16,3 +16,19 @@ steps:
       - git clone "$CI_REPO_CLONE_URL" && cd "$CI_REPO_NAME" && git checkout "$CI_COMMIT_BRANCH"
       - pip install python-semantic-release
       - semantic-release -v --config releaserc.toml version --skip-build --no-vcs-release
+
+  sync-main-to-dev:
+    image: alpine/git
+    environment:
+      GH_TOKEN:
+        from_secret: cookie-github-token
+    commands:
+      - cd "$CI_REPO_NAME"
+      - git config user.name "ci-bot"
+      - git config user.email "ci@example.com"
+      - git config --global url."https://$${GH_TOKEN}@github.com/".insteadOf "https://github.com/"
+      - git fetch origin
+      - git checkout dev
+      - >
+        git merge origin/main --no-ff -m "sync main into dev [skip ci]"
+      - git push origin dev
