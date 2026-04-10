@@ -4,6 +4,27 @@
 CHANGELOG
 =========
 
+.. _changelog-v3.2.0:
+
+v3.2.0 (2026-04-10)
+===================
+
+✨ Features
+-----------
+
+* Added sync-to-dev-from-main (`PR#44`_, `7b04b3d`_)
+
+🪲 Bug Fixes
+------------
+
+* All u need is love (`PR#45`_, `57780bb`_)
+
+.. _57780bb: https://github.com/cookielevanna5/computer-networks/commit/57780bb525eca3f5645d819a0537a5c8aea0ca28
+.. _7b04b3d: https://github.com/cookielevanna5/computer-networks/commit/7b04b3dd69324f913274a3cb9a96f69f9b9b949e
+.. _PR#44: https://github.com/cookielevanna5/computer-networks/pull/44
+.. _PR#45: https://github.com/cookielevanna5/computer-networks/pull/45
+
+
 .. _changelog-v3.1.0:
 
 v3.1.0 (2026-04-09)
