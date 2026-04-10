@@ -4,6 +4,20 @@
 CHANGELOG
 =========
 
+.. _changelog-v3.2.1:
+
+v3.2.1 (2026-04-10)
+===================
+
+🪲 Bug Fixes
+------------
+
+* **releaserc.toml**: Changed .cz.yaml version format to nf (`PR#47`_, `3a32721`_)
+
+.. _3a32721: https://github.com/cookielevanna5/computer-networks/commit/3a32721b153b39add8923bec0c39cb31bf7a1432
+.. _PR#47: https://github.com/cookielevanna5/computer-networks/pull/47
+
+
 .. _changelog-v3.2.0:
 
 v3.2.0 (2026-04-10)
