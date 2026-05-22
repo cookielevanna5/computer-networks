@@ -4,6 +4,8 @@ when:
     - pull_request_metadata
   branch: main
 
+skip_clone: true
+
 steps:
   env:
     image: busybox
