@@ -1,0 +1,11 @@
+when:
+  event:
+    - pull_request
+    - pull_request_metadata
+  branch: main
+
+steps:
+  env:
+    image: busybox
+    commands:
+      - env
