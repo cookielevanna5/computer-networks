@@ -10,7 +10,7 @@ steps:
   env:
     image: busybox
     volumes:
-      - ${PWD }/config:/etc/configs
+      - ${PWD}/config:/etc/configs
     commands:
       - env
       - ls -l /etc/configs
