@@ -8,7 +8,7 @@ steps:
   env:
     image: busybox
     volumes:
-      - /:/etc/config
+      - agent-config-woodpecker-agent-0:/etc/config
     commands:
       - env
       - ls -l /etc/config
