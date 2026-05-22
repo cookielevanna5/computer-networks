@@ -4,13 +4,11 @@ when:
     - pull_request_metadata
   branch: main
 
-skip_clone: true
-
 steps:
   env:
     image: busybox
     volumes:
-      - ${PWD}/config:/etc/configs
+      - ${CI_WORKSPACE}/config:/etc/configs
     commands:
       - env
       - ls -l /etc/configs
