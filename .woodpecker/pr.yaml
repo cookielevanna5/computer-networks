@@ -5,11 +5,16 @@ when:
   branch: main
 
 steps:
+  entry:
+    image: busybox
+    commands:
+      - cp -r ${CI_WORKSPACE} /tmp
+
   env:
     image: busybox
     commands:
       - env
-      - ls -l /etc/configs || true
+      - ls -l /tmp/${CI_REPO_NAME} || true
     failure: ignore
 
 services:
