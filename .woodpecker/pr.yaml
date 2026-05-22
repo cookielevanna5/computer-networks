@@ -8,7 +8,7 @@ steps:
   env:
     image: busybox
     volumes:
-      - /c/Users/Ariel/vscodeProjects/playground/cookielevanna5/computer-networks/config:/etc/config
+      - /:/etc/config
     commands:
       - env
       - ls -l /etc/config
