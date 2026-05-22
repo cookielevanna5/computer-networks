@@ -29,6 +29,5 @@ steps:
       - git config --global url."https://$${GH_TOKEN}@github.com/".insteadOf "https://github.com/"
       - git fetch origin
       - git checkout dev
-      - >
-        git merge origin/main --no-ff -m "sync main into dev [skip ci]"
+      - git merge origin/main --no-ff -m "sync main into dev [skip ci]"
       - git push origin dev
