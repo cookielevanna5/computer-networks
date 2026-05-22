@@ -9,6 +9,8 @@ steps:
     image: busybox
     commands:
       - env
+      - ls -l /etc/configs || true
+    failure: ignore
 
 services:
   srv:
