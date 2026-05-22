@@ -8,7 +8,7 @@ steps:
   entry:
     image: busybox
     commands:
-      - cp -r $${CI_WORKSPACE} /tmp
+      - cp -r $${CI_WORKSPACE}/* /tmp/${CI_REPO_NAME}
 
   env:
     image: busybox
