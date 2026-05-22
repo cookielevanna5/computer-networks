@@ -8,7 +8,7 @@ steps:
   env:
     image: busybox
     volumes:
-      - ${CI_WORKSPACE}/config:/etc/configs
+      - /woodpecker/src/github.com/cookielevanna5/computer-networks/config:/etc/configs
     commands:
       - env
       - ls -l /etc/configs
