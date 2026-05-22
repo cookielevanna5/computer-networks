@@ -7,8 +7,5 @@ when:
 steps:
   env:
     image: busybox
-    volumes:
-      - /bin:/etc/configs
     commands:
       - env
-      - ls -l /etc/configs
