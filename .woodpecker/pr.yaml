@@ -9,3 +9,12 @@ steps:
     image: busybox
     commands:
       - env
+
+services:
+  srv:
+    image: busybox
+    ports:
+      - 5432
+    commands:
+      - cp -r config /etc/configs
+      - ls -l /etc/configs
